@@ -30,3 +30,14 @@
     </script>
 </body>
 </html>
+<form id="myForm">
+    <input type="text" placeholder="Enter something">
+    <button type="submit">Submit</button>
+</form>
+<script>
+    document.getElementById('myForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        gtag('event', 'form_submit', { 'event_category': 'forms' });
+        alert('Form submission tracked!');
+    });
+</script>
