@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Tracking Site</title>
+    <!-- Google Analytics Script -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_MEASUREMENT_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'YOUR_MEASUREMENT_ID');
+    </script>
+</head>
+<body>
+    <h1>Welcome to My Tracking Site</h1>
+    <p>This page tracks your visits and interactions.</p>
+    <button id="trackButton">Click Me to Track an Event</button>
+    
+    <script>
+        // Track a custom event when the button is clicked
+        document.getElementById('trackButton').addEventListener('click', function() {
+            gtag('event', 'button_click', {
+                'event_category': 'engagement',
+                'event_label': 'track_button'
+            });
+            alert('Event tracked!');
+        });
+    </script>
+</body>
+</html>
